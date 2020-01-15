@@ -8,16 +8,13 @@ import View.CashierDisplay;
 public class FreeCommand implements Command {
 
     private Cashier cashier;
-    private CashierDisplay nextCashierDisplay;
 
-    public FreeCommand(Cashier cashier, CashierDisplay nextCashierDisplay) {
+    public FreeCommand(Cashier cashier) {
         this.cashier = cashier;
-        this.nextCashierDisplay = nextCashierDisplay;
     }
 
     @Override
     public void execute() {
         cashier.setStatus(Status.FREE);
-        nextCashierDisplay.show(cashier);
     }
 }

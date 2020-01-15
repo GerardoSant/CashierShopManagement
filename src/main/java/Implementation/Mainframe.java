@@ -45,7 +45,7 @@ public class Mainframe extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout());
         for (Cashier cashier: cashierList){
-            SwingCashierDisplay cashierDisplay = new SwingCashierDisplay(cashier, new CommandFactory(cashier, nextCashierDisplay).build());
+            SwingCashierDisplay cashierDisplay = new SwingCashierDisplay(cashier);
             cashier.addObserver(cashierDisplay);
             cashier.addObserver(nextCashierDisplay);
             panel.add(cashierDisplay);

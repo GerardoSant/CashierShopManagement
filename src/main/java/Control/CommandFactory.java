@@ -13,18 +13,17 @@ import java.util.Map;
 public class CommandFactory {
 
     private Cashier cashier;
-    private CashierDisplay cashierDisplay;
 
-    public CommandFactory(Cashier cashier, CashierDisplay cashierDisplay) {
+    public CommandFactory(Cashier cashier) {
         this.cashier = cashier;
-        this.cashierDisplay = cashierDisplay;
+
     }
 
     public Map<String,Command> build(){
         Map commands = new HashMap();
         commands.put("OPEN", new OpenCommand(cashier));
         commands.put("CLOSE", new CloseCommand(cashier));
-        commands.put("FREE", new FreeCommand(cashier, cashierDisplay));
+        commands.put("FREE", new FreeCommand(cashier));
         commands.put("BUSY", new BusyCommand(cashier));
         commands.put("CALL", new BusyCommand(cashier));
         return commands;

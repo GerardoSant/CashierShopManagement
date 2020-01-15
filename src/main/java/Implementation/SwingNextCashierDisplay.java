@@ -32,7 +32,7 @@ public class SwingNextCashierDisplay extends JPanel implements CashierDisplay {
         boolean thereIsFree=false;
         for (Cashier cashier : cashierList){
             if (cashier.getStatus().name().equals("FREE")){
-                label.setText("Next available cashier: " + cashier.getId());
+                show(cashier);
                 thereIsFree=true;
                 break;
             }

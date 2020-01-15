@@ -15,9 +15,9 @@ public class SwingCashierDisplay extends JPanel implements CashierDisplay {
     JButton freeBusy;
     Map<String, Command> commands;
 
-    public SwingCashierDisplay(Cashier cashier,Map<String, Command> commands) {
+    public SwingCashierDisplay(Cashier cashier) {
         this.cashier= cashier;
-        this.commands = commands;
+        this.commands = new CommandFactory(cashier).build();
         createCashierUI();
     }
 
